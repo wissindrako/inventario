@@ -12,7 +12,7 @@
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="<?php echo e(url('password-change')); ?>"><i class="material-icons">person</i>Perfil</a></li>
-                            <li><a href="<?php echo e(url('logout')); ?>"><i class="material-icons">input</i>Desconectar</a></li>
+                            <li><a href="<?php echo e(url('logout')); ?>"><i class="material-icons">input</i>Salir</a></li>
                         </ul>
                     </div>
                 </div>

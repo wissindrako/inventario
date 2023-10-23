@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 style="text-align:center">Opps Something Went Wrong <br>
-         Or You Don't Have Permission to Access This Page 
-    <a href="<?php echo e(url('/')); ?>">Go To Home page</a>
-    </h1>
+    <h2 style="text-align:center">Ups! <br> 
+         No tienes permisos para acceder a esta página
+    <a href="<?php echo e(url('/')); ?>">Volver al Inicio</a>
+    </h2>
 </body>
 </html>
