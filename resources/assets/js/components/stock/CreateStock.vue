@@ -75,7 +75,7 @@
                 <div class="col-md-6">
                   <div class="input-group">
                     <span class="input-group-addon">
-                      <i class="material-icons">attach_money</i>
+                      Bs.
                     </span>
                     <div class="form-line">
                       <input type="text" class="form-control" placeholder="Precio de compra"
@@ -87,7 +87,7 @@
                 <div class="col-md-6">
                   <div class="input-group">
                     <span class="input-group-addon">
-                      <i class="material-icons">attach_money</i>
+                      Bs.
                     </span>
                     <div class="form-line">
                       <input type="text" class="form-control" placeholder="Precio de venta"
@@ -102,7 +102,7 @@
                       <i class="material-icons">add</i>
                     </span>
                     <div class="form-line">
-                      <input type="number" class="form-control" placeholder="Cantidad" v-model="stock.quantity" />
+                      <input type="number" class="form-control" placeholder="Cantidad" v-model="stock.quantity" min="1"/>
                     </div>
                   </div>
                 </div>

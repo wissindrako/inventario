@@ -19,9 +19,9 @@
 										<th>Fecha</th>
 										<th>Importe</th>
 										<th>Pago con</th>
-										<th>Informacion</th>
+										<!-- <th>Informacion</th> -->
 										<th>Recibido por</th>
-										<th>Eliminar</th>
+										<!-- <th>Eliminar</th> -->
 									</tr>
 
 
@@ -32,12 +32,13 @@
 										<td>{{ payment.date | moment('LL') }}</td>	
 										<td>{{ payment.amount }}</td>	
 										<td>{{ payment.paid_in }}</td>
-										<td>{{ payment.bank_information }}</td>	
+										<!-- <td>{{ payment.bank_information }}</td>	 -->
 										<td>{{ payment.user.name }}</td>	
-										<td>
+										<!-- <td>
 											<button @click="deletePayment(payment.id)" type="button" class="btn bg-pink btn-circle waves-effect waves-circle waves-float">
 												<i class="material-icons">delete</i>
-											</button> </td>	
+											</button> 
+										</td>	 -->
 										</tr>
 
 									</tbody> 
@@ -46,20 +47,20 @@
 
 							<div class="row">
 								<div class="col-md-4">
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<p>Total a pagar</p>
 										<input type="text" name="" disabled="" :value="invoice.total_amount">
-									</div>   
+									</div>    -->
 
 									<div class="form-group">
-										<p>Total pagado</p>
+										<p>Total importe</p>
 										<input type="text" name="" disabled="" :value="totalAmount">
 									</div> 
 
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<p>Importe total a pagar</p>
 										<input type="text" name="" disabled="" :value="invoice.total_amount-totalAmount">
-									</div>
+									</div> -->
 								</div>
 							</div>
 

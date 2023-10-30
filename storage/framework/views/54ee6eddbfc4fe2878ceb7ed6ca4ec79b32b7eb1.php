@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>inventory-invoice:{{ $invoice->id }}</title>
-	<link href="{{ url('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+	<title>inventory-invoice:<?php echo e($invoice->id); ?></title>
+	<link href="<?php echo e(url('plugins/bootstrap/css/bootstrap.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <div class="container">
     	<div class="row">
     		<div class="col-md-12" style="text-align: center;">
-    		<h2 >{{ $company->name }}</h2>
-    		<small>{{ $company->address }}</small><br>
-    		<small>{{ $company->phone }}</small>
+    		<h2 ><?php echo e($company->name); ?></h2>
+    		<small><?php echo e($company->address); ?></small><br>
+    		<small><?php echo e($company->phone); ?></small>
     		<hr>
     	</div>
     	</div>
@@ -21,7 +21,8 @@
       <div class="row">
 <!--         <div class="col-xs-12">
           <h2 class="page-header">
-            <i class="fa fa-globe"></i> Invoice Details: {{ $invoice->id }}
+            <i class="fa fa-globe"></i> Invoice Details: <?php echo e($invoice->id); ?>
+
             <small class="pull-right"> </small>
           </h2>
         </div> -->
@@ -32,12 +33,12 @@
         <div class="col-sm-4 invoice-col">
           Información del cliente
           <address>
-            <strong>{{ $invoice->customer->customer_name }}</strong><br>
+            <strong><?php echo e($invoice->customer->customer_name); ?></strong><br>
 
-            <span style="font-weight: bold">Telefono:</span> {{ $invoice->customer->phone }}<br>
-            <span style="font-weight: bold">Correo electrónico:</span> {{ $invoice->customer->email ? $invoice->customer->email : 'no email' }}<br>
+            <span style="font-weight: bold">Telefono:</span> <?php echo e($invoice->customer->phone); ?><br>
+            <span style="font-weight: bold">Correo electrónico:</span> <?php echo e($invoice->customer->email ? $invoice->customer->email : 'no email'); ?><br>
 
-            <span style="font-weight: bold">Dirección:</span> {{ $invoice->customer->address  }}<br>
+            <span style="font-weight: bold">Dirección:</span> <?php echo e($invoice->customer->address); ?><br>
             
           </address>
         </div>
@@ -47,8 +48,8 @@
         </div>
         <!-- /.col -->
         <div class="col-sm-4 invoice-col text-right">
-          <b style="font-weight: bold;color: green">Factura N° : {{ $invoice->id }}</b><br>
-          <b>Fecha: {{ date("d F Y", strtotime($invoice->sell_date)) }}</b><br>
+          <b style="font-weight: bold;color: green">Factura N° : <?php echo e($invoice->id); ?></b><br>
+          <b>Fecha: <?php echo e(date("d F Y", strtotime($invoice->sell_date))); ?></b><br>
         </div>
         <!-- /.col -->
       </div>
@@ -65,32 +66,32 @@
               <th>Comprobante</th>
               <th>Cantidad</th>
               <th>Precio por unidad</th>
-              {{-- <th>Descuento</th> --}}
+              
               <th>Precio total</th>
             </tr>
             </thead>
             <tbody>
-              @php
+              <?php
                
                $sub_total = 0;
                $discount = 0;
-              @endphp
-              @foreach($invoice_details as $value)
+              ?>
+              <?php $__currentLoopData = $invoice_details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-              <td>{{ $value->stock->category->name }}</td>
-              <td>{{ $value->stock->product->product_name }}</td>
-              <td>{{ $value->chalan_no }}</td>
-              <td>{{ $value->sold_quantity }}</td>
-              <td>{{ $value->sold_price }}</td>
-              {{-- <td>{{ $value->discount_amount }}</td> --}}
-              <td>{{ $value->total_sold_price }}</td>
+              <td><?php echo e($value->stock->category->name); ?></td>
+              <td><?php echo e($value->stock->product->product_name); ?></td>
+              <td><?php echo e($value->chalan_no); ?></td>
+              <td><?php echo e($value->sold_quantity); ?></td>
+              <td><?php echo e($value->sold_price); ?></td>
+              
+              <td><?php echo e($value->total_sold_price); ?></td>
             </tr>
-            @php
+            <?php
               $discount += $value->discount_amount; 
               $sub_total += $value->total_sold_price;
-            @endphp
+            ?>
 
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
  
             </tbody>
           </table>
@@ -110,25 +111,13 @@
 
           <div class="table-responsive">
             <table class="table">
-              {{-- <tr>
-                <th style="width:50%">Subtotal:</th>
-                <td>$ {{ $sub_total+$discount }}</td>
-              </tr> --}}
-              {{-- <tr>
-                <th>Descuento: </th>
-                <td>$ {{ $discount }}</td>
-              </tr> --}}
+              
+              
               <tr>
-                <td>Importe a pagar: <b>Bs. {{ $sub_total }}</b></td>
+                <td>Importe a pagar: <b>Bs. <?php echo e($sub_total); ?></b></td>
               </tr> 
-              {{-- <tr>
-                <th>Importe pagado: </th>
-                <td>$ {!! $paid = $invoice->paid_amount !!}</td>
-              </tr>   --}}
-              {{-- <tr>
-                <th>Importe a debido: </th>
-                <td>$ {{ $sub_total-$paid }}</td>
-              </tr> --}}
+              
+              
             </table>
           </div>
         </div>

@@ -799,7 +799,7 @@ VALUES
   (
     3,
     0,
-    'Gestión de Existencias',
+    'Movimientos',
     'assignment',
     NULL,
     0,
@@ -953,7 +953,7 @@ VALUES
   (
     10,
     3,
-    'Entradas',
+    'Ingresos',
     NULL,
     'stock.index',
     0,
@@ -1181,7 +1181,7 @@ VALUES
     8,
     1,
     '2023-10-16',
-    'cash',
+    'efectivo',
     NULL,
     2100,
     '2023-10-16 23:11:16',

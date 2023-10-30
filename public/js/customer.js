@@ -39772,14 +39772,6 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(value.total_amount))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(value.total_paid_amount))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            _vm._s(value.total_amount - value.total_paid_amount)
-                          )
-                        ]),
-                        _vm._v(" "),
                         _c("td", [
                           _c(
                             "button",
@@ -39832,10 +39824,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Dirección")]),
         _vm._v(" "),
         _c("th", [_vm._v("Importe comprado")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Importe pagado")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Importe debido")]),
         _vm._v(" "),
         _c("th", [_vm._v("Editar")])
       ])

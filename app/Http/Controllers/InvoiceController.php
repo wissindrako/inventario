@@ -115,8 +115,7 @@ class InvoiceController extends Controller
           'customer_email' => 'nullable|unique:customers,email',
           'customer_phone' => 'nullable|unique:customers,phone',
           'invoice_date' => 'required',
-          'paid_amount' => 'nullable|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-
+          // 'paid_amount' => 'required|numeric|min:1|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
 
           'product.*.category' => 'required',
           'product.*.product_id' => 'required',
@@ -130,14 +129,14 @@ class InvoiceController extends Controller
           'customer_id.required_if' => 'required',
           'customer_name.required_if' => 'required',
 
-          'product.*.category.required' => 'required field',
-          'product.*.product_id.required' => 'required field',
-          'product.*.chalan_id.required' => 'required field',
-          'product.*.quantity.required' => 'required',
-          'product.*.quantity.integer' => 'required',
-          'product.*.price.required' => 'required',
-          'product.*.total_price.required' => 'required',
-          'product.*.discount.regex' => 'invalid format',  
+          'product.*.category.required' => 'Campo obligatorio',
+          'product.*.product_id.required' => 'Campo obligatorio',
+          'product.*.chalan_id.required' => 'Campo obligatorio',
+          'product.*.quantity.required' => 'Requerido',
+          'product.*.quantity.integer' => 'Requerido',
+          'product.*.price.required' => 'Requerido',
+          'product.*.total_price.required' => 'Requerido',
+          'product.*.discount.regex' => 'formato invalido',  
         ]);
 
 
@@ -175,9 +174,11 @@ class InvoiceController extends Controller
             $invoice->branch_id = Auth::user()->branch_id;  
             $invoice->total_amount = $request->grand_total;  
             $invoice->discount_amount = $request->total_discount;  
-            $invoice->paid_amount = $request->paid_amount;  
+            // $invoice->paid_amount = $request->paid_amount;  
+            $invoice->paid_amount = $request->grand_total;  
             $invoice->sell_date = date("Y-m-d", strtotime($request->invoice_date));  
-            $invoice->payment_method = $request->payment_info == 'cash' ? 1 : 2;
+            // $invoice->payment_method = $request->payment_info == 'efectivo' ? 1 : 2;
+            $invoice->payment_method = 1;
             if($request->paid_amount >= $request->grand_total){
              $invoice->payment_status = 1; 
               } 
@@ -240,7 +241,8 @@ class InvoiceController extends Controller
                 $payment->date = date("Y-m-d", strtotime($request->invoice_date));
                 $payment->paid_in = $request->payment_in;
                 $payment->bank_information = $request->bank_info;
-                $payment->amount = $request->paid_amount;
+                // $payment->amount = $request->paid_amount;
+                $payment->amount = $request->grand_total;
                 $payment->save();
 
             }
@@ -367,9 +369,9 @@ class InvoiceController extends Controller
            
           'customer_id' => 'required',
 
-          'product.*.category.required' => 'required field',
-          'product.*.product_id.required' => 'required field',
-          'product.*.chalan_id.required' => 'required field',
+          'product.*.category.required' => 'Campo obligatorio',
+          'product.*.product_id.required' => 'Campo obligatorio',
+          'product.*.chalan_id.required' => 'Campo obligatorio',
           'product.*.quantity.required' => 'required',
           'product.*.quantity.integer' => 'required',
           'product.*.price.required' => 'required',

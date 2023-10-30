@@ -42,19 +42,7 @@
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-blue-grey hover-zoom-effect">
-          <div class="icon">
-            <i class="material-icons">receipt</i>
-          </div>
-          <div class="content">
-            <div class="text">Facturas</div>
-            <div class="number">{{ info.total_invoice }}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-indigo hover-zoom-effect">
+        <div class="info-box bg-grey hover-zoom-effect">
           <div class="icon">
             <i class="material-icons">local_mall</i>
           </div>
@@ -68,6 +56,18 @@
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box bg-indigo hover-zoom-effect">
+          <div class="icon">
+            <i class="material-icons">receipt</i>
+          </div>
+          <div class="content">
+            <div class="text">Ventas</div>
+            <div class="number">{{ info.total_invoice }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-pink hover-zoom-effect">
           <div class="icon">
             <i class="material-icons">local_shipping</i>
@@ -79,7 +79,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-blue hover-zoom-effect">
@@ -103,13 +103,13 @@
           <div class="content">
             <div class="text">Importe vendido</div>
             <div class="number">
-              <small>$ {{ info.total_sold_amount }}</small>
+              <small>Bs. {{ info.total_sold_amount }}</small>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-green hover-zoom-effect">
           <div class="icon">
             <i class="material-icons">attach_money</i>
@@ -121,9 +121,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-red hover-zoom-effect">
           <div class="icon">
             <i class="material-icons">money_off</i>
@@ -135,9 +135,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-brown hover-zoom-effect">
           <div class="icon">
             <i class="material-icons">payments</i>
@@ -149,9 +149,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-cyan hover-zoom-effect">
           <div class="icon">
             <i class="material-icons">money</i>
@@ -163,7 +163,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+
     </div>
   </div>
 </template>

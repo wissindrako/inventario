@@ -129,6 +129,14 @@ class StockController extends Controller
         'buying_price' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
         'selling_price' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
 
+      ],
+      [
+        'product.required' => 'El campo producto es requerido',
+        'vendor.required' => 'El campo proveedor es requerido',
+        'category.required' => 'El campo categoria es requerido',
+        'quantity.required' => 'El campo cantidad es requerido',
+        'buying_price.required' => 'El campo precio de compra es requerido',
+        'selling_price.required' => 'El campo precio de venta es requerido',
       ]);
 
       try{
@@ -302,8 +310,7 @@ class StockController extends Controller
 
       if($check > 0){
 
-
-       return response()->json(['status'=>'error','message'=>'Esta factura tiene registro de ventas, eliminar los artículos vendidos primero']);
+       return response()->json(['status'=>'error','message'=>'No es posible el producto ya tiene Factura(s).']);
 
      }
 

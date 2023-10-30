@@ -39001,7 +39001,11 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("div", { staticClass: "input-group" }, [
-                        _vm._m(5),
+                        _c("span", { staticClass: "input-group-addon" }, [
+                          _vm._v(
+                            "\n                    Bs.\n                  "
+                          )
+                        ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "form-line" }, [
                           _c("input", {
@@ -39038,7 +39042,11 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("div", { staticClass: "input-group" }, [
-                        _vm._m(6),
+                        _c("span", { staticClass: "input-group-addon" }, [
+                          _vm._v(
+                            "\n                    Bs.\n                  "
+                          )
+                        ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "form-line" }, [
                           _c("input", {
@@ -39075,7 +39083,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("div", { staticClass: "input-group" }, [
-                        _vm._m(7),
+                        _vm._m(5),
                         _vm._v(" "),
                         _c("div", { staticClass: "form-line" }, [
                           _c("input", {
@@ -39088,7 +39096,11 @@ var render = function() {
                               }
                             ],
                             staticClass: "form-control",
-                            attrs: { type: "number", placeholder: "Cantidad" },
+                            attrs: {
+                              type: "number",
+                              placeholder: "Cantidad",
+                              min: "1"
+                            },
                             domProps: { value: _vm.stock.quantity },
                             on: {
                               input: function($event) {
@@ -39109,7 +39121,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("div", { staticClass: "input-group" }, [
-                        _vm._m(8),
+                        _vm._m(6),
                         _vm._v(" "),
                         _c("div", { staticClass: "form-line" }, [
                           _c("input", {
@@ -39225,22 +39237,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "input-group-addon" }, [
       _c("i", { staticClass: "material-icons" }, [_vm._v("playlist_add_check")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "input-group-addon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("attach_money")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "input-group-addon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("attach_money")])
     ])
   },
   function() {
@@ -41161,9 +41157,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Comprobante")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Existencia inicial")]),
+        _c("th", [_vm._v("Stock inicial")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Existencia actual")]),
+        _c("th", [_vm._v("Saldo")]),
         _vm._v(" "),
         _c("th", [_vm._v("Precio de compra")]),
         _vm._v(" "),

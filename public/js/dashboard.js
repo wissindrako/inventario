@@ -38469,6 +38469,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -38561,26 +38562,8 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-6 col-xs-12" }, [
-            _c(
-              "div",
-              { staticClass: "info-box bg-blue-grey hover-zoom-effect" },
-              [
-                _vm._m(3),
-                _vm._v(" "),
-                _c("div", { staticClass: "content" }, [
-                  _c("div", { staticClass: "text" }, [_vm._v("Facturas")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "number" }, [
-                    _vm._v(_vm._s(_vm.info.total_invoice))
-                  ])
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-6 col-xs-12" }, [
-            _c("div", { staticClass: "info-box bg-indigo hover-zoom-effect" }, [
-              _vm._m(4),
+            _c("div", { staticClass: "info-box bg-grey hover-zoom-effect" }, [
+              _vm._m(3),
               _vm._v(" "),
               _c("div", { staticClass: "content" }, [
                 _c("div", { staticClass: "text" }, [
@@ -38595,16 +38578,14 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-6 col-xs-12" }, [
-            _c("div", { staticClass: "info-box bg-pink hover-zoom-effect" }, [
-              _vm._m(5),
+            _c("div", { staticClass: "info-box bg-indigo hover-zoom-effect" }, [
+              _vm._m(4),
               _vm._v(" "),
               _c("div", { staticClass: "content" }, [
-                _c("div", { staticClass: "text" }, [
-                  _vm._v("Existencia vendida")
-                ]),
+                _c("div", { staticClass: "text" }, [_vm._v("Ventas")]),
                 _vm._v(" "),
                 _c("div", { staticClass: "number" }, [
-                  _c("small", [_vm._v(_vm._s(_vm.info.total_sold_quantity))])
+                  _vm._v(_vm._s(_vm.info.total_invoice))
                 ])
               ])
             ])
@@ -38612,7 +38593,7 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-6 col-xs-12" }, [
             _c("div", { staticClass: "info-box bg-blue hover-zoom-effect" }, [
-              _vm._m(6),
+              _vm._m(5),
               _vm._v(" "),
               _c("div", { staticClass: "content" }, [
                 _c("div", { staticClass: "text" }, [
@@ -38631,7 +38612,7 @@ var render = function() {
               "div",
               { staticClass: "info-box bg-deep-orange hover-zoom-effect" },
               [
-                _vm._m(7),
+                _vm._m(6),
                 _vm._v(" "),
                 _c("div", { staticClass: "content" }, [
                   _c("div", { staticClass: "text" }, [
@@ -38640,78 +38621,12 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "number" }, [
                     _c("small", [
-                      _vm._v("$ " + _vm._s(_vm.info.total_sold_amount))
+                      _vm._v("Bs. " + _vm._s(_vm.info.total_sold_amount))
                     ])
                   ])
                 ])
               ]
             )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-6 col-xs-12" }, [
-            _c("div", { staticClass: "info-box bg-green hover-zoom-effect" }, [
-              _vm._m(8),
-              _vm._v(" "),
-              _c("div", { staticClass: "content" }, [
-                _c("div", { staticClass: "text" }, [_vm._v("Importe pagado")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "number" }, [
-                  _c("small", [
-                    _vm._v("$ " + _vm._s(_vm.info.total_paid_amount))
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-6 col-xs-12" }, [
-            _c("div", { staticClass: "info-box bg-red hover-zoom-effect" }, [
-              _vm._m(9),
-              _vm._v(" "),
-              _c("div", { staticClass: "content" }, [
-                _c("div", { staticClass: "text" }, [
-                  _vm._v("Importe restante")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "number" }, [
-                  _c("small", [
-                    _vm._v("$ " + _vm._s(_vm.info.total_outstanding))
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-6 col-xs-12" }, [
-            _c("div", { staticClass: "info-box bg-brown hover-zoom-effect" }, [
-              _vm._m(10),
-              _vm._v(" "),
-              _c("div", { staticClass: "content" }, [
-                _c("div", { staticClass: "text" }, [_vm._v("Beneficio bruto")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "number" }, [
-                  _c("small", [
-                    _vm._v("$ " + _vm._s(_vm.info.total_gross_profit))
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-6 col-xs-12" }, [
-            _c("div", { staticClass: "info-box bg-cyan hover-zoom-effect" }, [
-              _vm._m(11),
-              _vm._v(" "),
-              _c("div", { staticClass: "content" }, [
-                _c("div", { staticClass: "text" }, [_vm._v("Beneficio neto")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "number" }, [
-                  _c("small", [
-                    _vm._v("$ " + _vm._s(_vm.info.total_net_profit))
-                  ])
-                ])
-              ])
-            ])
           ])
         ])
       : _vm._e()
@@ -38747,14 +38662,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "icon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("receipt")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "icon" }, [
       _c("i", { staticClass: "material-icons" }, [_vm._v("local_mall")])
     ])
   },
@@ -38763,7 +38670,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "icon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("local_shipping")])
+      _c("i", { staticClass: "material-icons" }, [_vm._v("receipt")])
     ])
   },
   function() {
@@ -38780,38 +38687,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "icon" }, [
       _c("i", { staticClass: "material-icons" }, [_vm._v("payment")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "icon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("attach_money")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "icon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("money_off")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "icon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("payments")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "icon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("money")])
     ])
   }
 ]

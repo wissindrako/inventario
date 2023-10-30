@@ -153,15 +153,13 @@
               <table class="table table-bordered table-condensed" style="min-height: 200px;">
                 <thead class="bg-teal">
                   <tr>
-                    <th>#</th>
-                    <th>Categoría</th>
-                    <th>Producto</th>
-                    <th>Comprobante</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Descuento</th>
-                    <th>Tipo de descuento</th>
-                    <th>Total</th>
+                    <th width="3%">#</th>
+                    <th width="25%">Categoría</th>
+                    <th width="30%">Producto</th>
+                    <th width="25%">Comprobante</th>
+                    <th width="5%">Cantidad</th>
+                    <th width="5%">Precio</th>
+                    <th width="7%">Total</th>
                   </tr>
                 </thead>
 
@@ -219,7 +217,7 @@
                         <option value>Seleccionar Comprobante</option>
                         <option v-for="(ch, ch_index) in vl.stocks" :value="ch.id">
                           {{
-                            ch.chalan_no }}. qty({{ ch.current_quantity }})
+                            ch.chalan_no }}. stock({{ ch.current_quantity }})
                         </option>
                       </select>
 
@@ -244,28 +242,14 @@
                         errors['product.' + index + '.price'][0] }}</span>
                     </td>
 
-                    <td>
-                      <input class="form-control" type="text" name v-model.double="invoice.product[index].discount"
-                        placeholder="Descuento">
 
-                      <span v-if="errors['product.' + index + '.discount']" class="requiredField">{{
-                        errors['product.' + index + '.discount'][0] }}</span>
-                    </td>
-
-                    <td>
-                      <select class="form-control" v-model="invoice.product[index].discount_type">
-                        <option value="1">Importe</option>
-                        <option value="2">%</option>
-                      </select>
-                    </td>
 
                     <!-- for getting discount amount  -->
-                    <input type="hidden"
-                      :value="vl.discount_amount = discount(invoice.product[index].discount_type, invoice.product[index].discount, vl.total_price)">
+
 
                     <td>
                       <input class="form-control" type="text" name placeholder="Total" disabled
-                        :value="vl.total_price = vl.quantity * vl.price - vl.discount_amount">
+                        :value="vl.total_price = invoice.product[index].quantity * invoice.product[index].price">
                     </td>
                   </tr>
                 </tbody>
@@ -282,54 +266,37 @@
           <div class="row">
 
             <div class="col-md-12" style="margin-top: 20px">
-              <div class="form-group">
-                <label>Precio total: &nbsp;</label>
-                <div class="input-group focused">
-                  <div class="input-group-addon">$</div>
-                  <!--                                   <input type="number" class="form-control" name="sub_total"  :value="invoice.total_amount = totalAmount + totalDiscount" placeholder="Subtotal" disabled=""> -->
-                  <label>{{ invoice.total_amount = totalAmount + totalDiscount }}</label>
-                </div>
-              </div>
 
               <div class="form-group">
-                <label>Descuento total: &nbsp;</label>
+                <label>Importe total a pagar: &nbsp;</label>
                 <div class="input-group focused">
-                  <div class="input-group-addon">$</div>
-                  <label>{{ invoice.total_disount = totalDiscount }}</label>
-                  <!-- 		<input type="number" class="form-control" name="sub_total" :value="invoice.total_disount = totalDiscount" placeholder="Subtotal" disabled=""> -->
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label>Importe neto por pagar: &nbsp;</label>
-                <div class="input-group focused">
-                  <div class="input-group-addon">$</div>
+                  <div class="input-group-addon">Bs.</div>
                   <label>{{ invoice.grand_total = totalAmount }}</label>
                   <!--     <input type="number" class="form-control" name="sub_total"  :value="invoice.grand_total = totalAmount" placeholder="Subtotal" disabled=""> -->
                 </div>
               </div>
 
               <div class="form-group">
-                <label>Pagar ahora: &nbsp;</label>
+                <label>Efectivo: &nbsp;</label>
                 <div class="input-group focused">
-                  <div class="input-group-addon">$</div>
+                  <div class="input-group-addon">Bs.</div>
 
-                  <input type="text" class="form-control" v-model="invoice.paid_amount" placeholder="Pay Now"
+                  <input type="text" class="form-control" v-model="invoice.paid_amount" placeholder=""
                     style="border-bottom: 1px solid #ccc;">
                 </div>
               </div>
 
-              <div class="form-group" v-show="invoice.paid_amount > 0">
+              <!-- <div class="form-group" v-show="invoice.paid_amount > 0">
                 <label>Pagado en :</label>
                 <div class="input-group focused">
                   <div class="input-group-addon"></div>
 
                   <select class="form-control" v-model="invoice.payment_in">
-                    <option :value="'cash'">Efectivo</option>
+                    <option :value="'efectivo'">Efectivo</option>
                     <option :value="'bank'">Banco</option>
                   </select>
                 </div>
-              </div>
+              </div> -->
               <div class="form-group" v-if="invoice.payment_in === 'bank'">
                 <label>Información de pago:</label>
                 <div class="input-group focused">
@@ -341,10 +308,10 @@
               </div>
 
               <div class="form-group">
-                <label>Importe a deber</label>
+                <label>Cambio:</label>
                 <div class="input-group focused">
                   <div class="input-group-addon">$</div>
-                  <label>{{ invoice.grand_total - invoice.paid_amount }}</label>
+                  <label>{{ invoice.paid_amount - invoice.grand_total }}</label>
                 </div>
               </div>
 
@@ -392,7 +359,7 @@ export default {
         total_amount: 0,
         grand_total: 0,
         paid_amount: 0,
-        payment_in: "cash",
+        payment_in: "efectivo",
         bank_info: "",
         product: [
           {
@@ -423,8 +390,13 @@ export default {
 
   methods: {
     store() {
-      // alert('clicked');
+      // console.log('total: ' + this.invoice.grand_total);
+      // console.log('pagado: ' + this.invoice.paid_amount);
 
+      if(this.invoice.paid_amount < this.invoice.grand_total){
+        Swal("Oops", "El pago está incompleto!", "error");
+      }else{
+        
       axios
         .post(base_url + "invoice", this.invoice)
         .then(response => {
@@ -445,6 +417,8 @@ export default {
             this.successAlert(error);
           }
         });
+      }
+
     },
 
     findProduct(index) {
@@ -567,7 +541,7 @@ export default {
         total_amount: 0,
         grand_total: 0,
         paid_amount: 0,
-        payment_in: "cash",
+        payment_in: "efectivo",
         bank_info: "",
         product: [
           {
@@ -591,10 +565,11 @@ export default {
     },
 
     discount(type, discount, main_amount) {
+      console.log(main_amount)
       if (type === "2") {
-        return parseFloat(((discount / 100) * main_amount)).toFixed(2);
+        return parseFloat(main_amount - ((discount / 100) * main_amount)).toFixed(2);
       } else {
-        return parseFloat(discount).toFixed(2);
+        return parseFloat(main_amount - discount).toFixed(2);
       }
     }
 

@@ -45,8 +45,8 @@
               <th>Producto</th>
               <th>Proveedor</th>
               <th>Comprobante</th>
-              <th>Existencia inicial</th>
-              <th>Existencia actual</th>
+              <th>Stock inicial</th>
+              <th>Saldo</th>
               <th>Precio de compra</th>
               <th>Precio de venta</th>
               <th>Entrada por</th>

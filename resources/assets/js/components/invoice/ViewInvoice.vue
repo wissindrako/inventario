@@ -38,18 +38,18 @@
         <table class="table table-condensed table-hover table-bordered">
           <thead>
             <tr>
-              <th>Facturación</th>
+              <th>#</th>
               <th>Fecha</th>
               <th>Cliente</th>
               <th>Monto total</th>
-              <th>Pagado</th>
-              <th>Debido</th>
+              <!-- <th>Pagado</th> -->
+              <!-- <th>Debido</th> -->
               <th>Vendido por</th>
               <th>Pagos</th>
-              <th>Abonar</th>
+              <!-- <th>Abonar</th> -->
               <th>Imprimir</th>
               <th>Editar</th>
-              <th>Eliminar</th>
+              <!-- <th>Eliminar</th> -->
             </tr>
           </thead>
           <tbody>
@@ -58,13 +58,13 @@
               <td>{{ value.sell_date | moment('LL') }}</td>
               <td>{{ value.customer.customer_name }}</td>
               <td>{{ value.total_amount }}</td>
-              <td>{{ value.paid_amount }}</td>
-              <td v-bind:class="{
+              <!-- <td>{{ value.paid_amount }}</td> -->
+              <!-- <td v-bind:class="{
                 'text-success': value.payment_status === 1,
                 'text-danger': value.payment_status === 0
               }">
                 {{ value.total_amount - value.paid_amount }}
-              </td>
+              </td> -->
               <td>{{ value.user.name }}</td>
 
 
@@ -73,11 +73,11 @@
                   class="btn bg-cyan btn-circle waves-effect waves-circle waves-float"><i
                     class="material-icons">remove_red_eye</i></a>
               </td>
-              <td>
+              <!-- <td>
                 <a @click.prevent="CreatePayment(value.id)" href="" data-toggle="modal" data-target="#smallModal"
                   class="btn bg-blue-grey btn-circle waves-effect waves-circle waves-float"><i
                     class="material-icons">attach_money</i></a>
-              </td>
+              </td> -->
 
               <td>
 
@@ -89,19 +89,19 @@
 
               <td>
 
-                <button @click="editInvoice(value.id)" type="button"
-                  class="btn bg-blue btn-circle waves-effect waves-circle waves-float">
+                <!-- <button @click="editInvoice(value.id)" type="button" -->
+                <button type="button" disabled
+                  class="btn bg-grey btn-circle waves-effect waves-circle waves-float">
                   <i class="material-icons">edit</i>
                 </button>
               </td>
 
-              <td>
+              <!-- <td>
                 <button @click="deleteInvoice(value.id)" type="button"
                   class="btn bg-pink btn-circle waves-effect waves-circle waves-float">
                   <i class="material-icons">delete</i>
                 </button>
-
-              </td>
+              </td> -->
 
 
             </tr>
