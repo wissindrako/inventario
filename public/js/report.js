@@ -40813,6 +40813,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -40831,12 +40832,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 
 		return {
-
-			report_type: '',
+			report_type: 'stock',
 			category_id: '',
 			product_id: '',
 			chalan_id: '',
-
+			start_date: new Date(new Date().getFullYear(), 0, 1),
+			end_date: new Date().toISOString().slice(0, 10),
 			product: [],
 			chalan: []
 
@@ -40921,28 +40922,8 @@ var render = function() {
               }
             },
             [
-              _c("option", { domProps: { value: "" } }, [
-                _vm._v("Chose Report Type *")
-              ]),
-              _vm._v(" "),
               _c("option", { domProps: { value: "stock" } }, [
-                _vm._v("Stock Report")
-              ]),
-              _vm._v(" "),
-              _c("option", { domProps: { value: "sell" } }, [
-                _vm._v("Sell Report")
-              ]),
-              _vm._v(" "),
-              _c("option", { domProps: { value: "profit" } }, [
-                _vm._v("Profit Report")
-              ]),
-              _vm._v(" "),
-              _c("option", { domProps: { value: "due" } }, [
-                _vm._v("Due Report")
-              ]),
-              _vm._v(" "),
-              _c("option", { domProps: { value: "invoice" } }, [
-                _vm._v("Invoice Report")
+                _vm._v("Reporte de Inventario")
               ])
             ]
           )
@@ -40959,9 +40940,17 @@ var render = function() {
             _c("vuejs-datepicker", {
               attrs: {
                 required: true,
-                placeholder: "Date To *",
+                placeholder: "Desde *",
                 name: "start_date",
-                "input-class": "form-control"
+                "input-class": "form-control",
+                format: "dd-MM-yyyy"
+              },
+              model: {
+                value: _vm.start_date,
+                callback: function($$v) {
+                  _vm.start_date = $$v
+                },
+                expression: "start_date"
               }
             })
           ],
@@ -40979,9 +40968,17 @@ var render = function() {
             _c("vuejs-datepicker", {
               attrs: {
                 required: true,
-                placeholder: "Date From *",
+                placeholder: "Hasta *",
                 name: "end_date",
-                "input-class": "form-control"
+                "input-class": "form-control",
+                format: "dd-MM-yyyy"
+              },
+              model: {
+                value: _vm.end_date,
+                callback: function($$v) {
+                  _vm.end_date = $$v
+                },
+                expression: "end_date"
               }
             })
           ],
@@ -41034,7 +41031,7 @@ var render = function() {
                 },
                 [
                   _c("option", { attrs: { value: "" } }, [
-                    _vm._v("Chose Category (optional)")
+                    _vm._v("Por categoria (opcional)")
                   ]),
                   _vm._v(" "),
                   _vm._l(_vm.category, function(value) {
@@ -41094,7 +41091,7 @@ var render = function() {
                 },
                 [
                   _c("option", { attrs: { value: "" } }, [
-                    _vm._v("Chose Product (optional)")
+                    _vm._v("Por producto (opcional)")
                   ]),
                   _vm._v(" "),
                   _vm._l(_vm.product, function(pr) {
@@ -41117,69 +41114,12 @@ var render = function() {
               _c(
                 "select",
                 {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.chalan_id,
-                      expression: "chalan_id"
-                    },
-                    {
-                      name: "select",
-                      rawName: "v-select",
-                      value: _vm.chalan_id,
-                      expression: "chalan_id"
-                    }
-                  ],
-                  staticClass: "form-control select2",
-                  attrs: { name: "stock_id" },
-                  on: {
-                    change: function($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function(o) {
-                          return o.selected
-                        })
-                        .map(function(o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.chalan_id = $event.target.multiple
-                        ? $$selectedVal
-                        : $$selectedVal[0]
-                    }
-                  }
-                },
-                [
-                  _c("option", { attrs: { value: "" } }, [
-                    _vm._v("Chose Comprobante (optional)")
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.chalan, function(ch) {
-                    return _c("option", { domProps: { value: ch.id } }, [
-                      _vm._v(_vm._s(ch.chalan_no))
-                    ])
-                  })
-                ],
-                2
-              )
-            ])
-          ])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    !_vm.isEnable
-      ? _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "input-group" }, [
-            _c("div", { staticClass: "form-line" }, [
-              _c(
-                "select",
-                {
                   staticClass: "form-control select2",
                   attrs: { name: "vendor_id" }
                 },
                 [
                   _c("option", { attrs: { value: "" } }, [
-                    _vm._v("Chose Vendor (optional)")
+                    _vm._v("Por proveedor (optional)")
                   ]),
                   _vm._v(" "),
                   _vm._l(_vm.vendor, function(vn) {
@@ -41193,56 +41133,7 @@ var render = function() {
             ])
           ])
         ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-md-4" }, [
-      _c("div", { staticClass: "input-group" }, [
-        _c("div", { staticClass: "form-line" }, [
-          _c(
-            "select",
-            {
-              staticClass: "form-control select2",
-              attrs: { name: "customer_id" }
-            },
-            [
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Customer (optional)")
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.customer, function(cs) {
-                return _c("option", { domProps: { value: cs.id } }, [
-                  _vm._v(_vm._s(cs.customer_name))
-                ])
-              })
-            ],
-            2
-          )
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-md-4" }, [
-      _c("div", { staticClass: "input-group" }, [
-        _c("div", { staticClass: "form-line" }, [
-          _c(
-            "select",
-            { staticClass: "form-control select2", attrs: { name: "user_id" } },
-            [
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Chose Stock Entire / Seller (optional)")
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.user, function(us) {
-                return _c("option", { domProps: { value: us.id } }, [
-                  _vm._v(_vm._s(us.name))
-                ])
-              })
-            ],
-            2
-          )
-        ])
-      ])
-    ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []

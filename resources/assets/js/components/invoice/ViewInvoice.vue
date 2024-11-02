@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-md-6">
           <input type="text" class="form-control " v-on:keyup="getData(1)" v-model="invoice_id"
-            placeholder="Buscar por número de factura">
+            placeholder="Buscar por número de Recibo">
         </div>
         <div class="col-md-6">
           <select class="form-control  select2" data-live-serach="true" @change="getData(1)" v-model="customer_id"
@@ -55,7 +55,7 @@
           <tbody>
             <tr v-for="(value, index) in invoices.data">
               <td>{{ value.id }}</td>
-              <td>{{ value.sell_date | moment('LL') }}</td>
+              <td>{{ value.sell_date | moment('DD/MM/YYYY') }}</td>
               <td>{{ value.customer.customer_name }}</td>
               <td>{{ value.total_amount }}</td>
               <!-- <td>{{ value.paid_amount }}</td> -->

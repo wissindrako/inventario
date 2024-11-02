@@ -4,12 +4,10 @@
 @section('title','Inventario | Stock-Report')
 
 
-@section('page-title','Stock Report')
+@section('page-title','Reporte')
 
 
 @section('content')
-
-
 
 
 <div class="row clearfix">
@@ -18,7 +16,7 @@
 			<div class="header">
 				<h2>
 					
-					Stock Report
+					Reporte de Inventario
 					
 				</h2>
 
@@ -52,20 +50,20 @@
 							</tr>  				
 
 							<tr style="border: none !important;">
-								<td colspan="11" style="border: none !important;"><p style="text-align: center;font-weight: bold;">Stock Report from {{ date('j M Y',strtotime($start_date)) }} To {{ date('j M Y',strtotime($end_date)) }}</p></td>
+								<td colspan="11" style="border: none !important;"><p style="text-align: center;font-weight: bold;">Reporte de Inventario de {{ date('j M Y',strtotime($start_date)) }} a {{ date('j M Y',strtotime($end_date)) }}</p></td>
 
 							</tr>
 							<tr>
-								<th>Category</th>
-								<th>Product</th>
+								<th>Categoria</th>
+								<th>Producto</th>
 								<th>Comprobante</th>
 								<th>Fecha</th>
-								<th>Entry By</th>
-								<th>Buying Price</th>
-								<th>Selling Price</th>
-								<th>Stock Quantity</th>
-								<th>Sold Quantity</th>
-								<th>Current Quantity</th>
+								<th>Registrado por</th>
+								<th>Precio de compra</th>
+								<th>Precio de venta</th>
+								<th>Cant. Inventario</th>
+								<th>Cant. vendida</th>
+								<th>Saldo actual</th>
 							</tr>
 						</thead>
 

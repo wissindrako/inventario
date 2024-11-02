@@ -7,7 +7,7 @@
     </h2>
     <div v-show="invoice_state" class="card">
       <div class="header" style="padding-bottom: 60px;">
-        <h2 class="pull-left">A</h2>
+        <h2 class="pull-left">Nueva salida</h2>
 
         <h2 class="pull-right">
           <a href @click.prevent="showInvoice" class="btn bg-red btn-circle waves-effect waves-circle waves-float">
@@ -118,10 +118,10 @@
 
           <div class="row">
             <div class="col-md-6">
-              <p>Número de factura</p>
+              <p>Número de Recibo</p>
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="material-icons">person</i>
+                  <i class="material-icons">receipt</i>
                 </span>
                 <div class="form-line">
                   <input class="form-control" type="text" disabled name v-model="invoice.invoice_no">
@@ -130,10 +130,10 @@
             </div>
 
             <div class="col-md-6">
-              <p>Fecha de la factura</p>
+              <p>Fecha del Recibo</p>
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="material-icons">person</i>
+                  <i class="material-icons">event</i>
                 </span>
                 <div class="form-line">
                   <vuejs-datepicker :input-class="'form-control'" :format="'yyyy-MM-dd'" value-format="yyyy-MM-dd"
@@ -156,7 +156,7 @@
                     <th width="3%">#</th>
                     <th width="25%">Categoría</th>
                     <th width="30%">Producto</th>
-                    <th width="25%">Comprobante</th>
+                    <th width="25%">Comprobante de ingreso</th>
                     <th width="5%">Cantidad</th>
                     <th width="5%">Precio</th>
                     <th width="7%">Total</th>
@@ -316,7 +316,7 @@
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn bg-teal">Generar Factura</button>
+                <button type="submit" class="btn bg-teal">Generar Recibo</button>
               </div>
             </div>
           </div>
@@ -354,7 +354,7 @@ export default {
         customer_email: "",
         customer_phone: "",
         customer_address: "",
-        invoice_date: "",
+        invoice_date: new Date().toISOString().slice(0,10),
         total_discount: 0,
         total_amount: 0,
         grand_total: 0,

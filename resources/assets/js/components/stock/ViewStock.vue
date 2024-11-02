@@ -44,7 +44,6 @@
               <th>Categoría</th>
               <th>Producto</th>
               <th>Proveedor</th>
-              <th>Comprobante</th>
               <th>Stock inicial</th>
               <th>Saldo</th>
               <th>Precio de compra</th>
@@ -61,13 +60,12 @@
               <td>{{ value.category.name }}</td>
               <td>{{ value.product.product_name }}</td>
               <td>{{ value.vendor.name }}</td>
-              <td>{{ value.chalan_no }}</td>
               <td>{{ value.stock_quantity }}</td>
               <td>{{ value.current_quantity }}</td>
               <td>{{ value.buying_price }}</td>
               <td>{{ value.selling_price }}</td>
               <td>{{ value.user.name }}</td>
-              <td>{{ value.created_at | moment('LL') }}</td>
+              <td>{{ value.created_at | moment('DD/MM/YYYY') }}</td>
               <td>
                 <button @click="editQty(value.id, value.category_id)" type="button"
                   class="btn bg-blue btn-circle waves-effect waves-circle waves-float">

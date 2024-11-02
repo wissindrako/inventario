@@ -41723,7 +41723,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         customer_email: "",
         customer_phone: "",
         customer_address: "",
-        invoice_date: "",
+        invoice_date: new Date().toISOString().slice(0, 10),
         total_discount: 0,
         total_amount: 0,
         grand_total: 0,
@@ -41997,7 +41997,7 @@ var render = function() {
           "div",
           { staticClass: "header", staticStyle: { "padding-bottom": "60px" } },
           [
-            _c("h2", { staticClass: "pull-left" }, [_vm._v("A")]),
+            _c("h2", { staticClass: "pull-left" }, [_vm._v("Nueva salida")]),
             _vm._v(" "),
             _c("h2", { staticClass: "pull-right" }, [
               _c(
@@ -42336,7 +42336,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-md-6" }, [
-                  _c("p", [_vm._v("Número de factura")]),
+                  _c("p", [_vm._v("Número de Recibo")]),
                   _vm._v(" "),
                   _c("div", { staticClass: "input-group" }, [
                     _vm._m(6),
@@ -42372,7 +42372,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-6" }, [
-                  _c("p", [_vm._v("Fecha de la factura")]),
+                  _c("p", [_vm._v("Fecha del Recibo")]),
                   _vm._v(" "),
                   _c("div", { staticClass: "input-group" }, [
                     _vm._m(7),
@@ -42966,7 +42966,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "input-group-addon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("person")])
+      _c("i", { staticClass: "material-icons" }, [_vm._v("receipt")])
     ])
   },
   function() {
@@ -42974,7 +42974,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "input-group-addon" }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("person")])
+      _c("i", { staticClass: "material-icons" }, [_vm._v("event")])
     ])
   },
   function() {
@@ -42989,7 +42989,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { width: "30%" } }, [_vm._v("Producto")]),
         _vm._v(" "),
-        _c("th", { attrs: { width: "25%" } }, [_vm._v("Comprobante")]),
+        _c("th", { attrs: { width: "25%" } }, [
+          _vm._v("Comprobante de ingreso")
+        ]),
         _vm._v(" "),
         _c("th", { attrs: { width: "5%" } }, [_vm._v("Cantidad")]),
         _vm._v(" "),
@@ -43005,7 +43007,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
       _c("button", { staticClass: "btn bg-teal", attrs: { type: "submit" } }, [
-        _vm._v("Generar Factura")
+        _vm._v("Generar Recibo")
       ])
     ])
   }
@@ -45176,7 +45178,7 @@ var render = function() {
                         staticClass: "modal-title",
                         attrs: { id: "CreatePayment" }
                       },
-                      [_vm._v("Pago de factura N° : " + _vm._s(_vm.payment.id))]
+                      [_vm._v("Recibo N° : " + _vm._s(_vm.payment.id))]
                     )
                   ]),
                   _vm._v(" "),
@@ -45652,7 +45654,7 @@ var render = function() {
                     attrs: { id: "CreatePayment" }
                   },
                   [
-                    _vm._v("Pagos de factura N° : " + _vm._s(_vm.id) + "  "),
+                    _vm._v("Recibo N° : " + _vm._s(_vm.id) + "  "),
                     _c("br"),
                     _vm._v(
                       " Cliente : " +
@@ -45677,7 +45679,9 @@ var render = function() {
                           return _c("tr", [
                             _c("td", [
                               _vm._v(
-                                _vm._s(_vm._f("moment")(payment.date, "LL"))
+                                _vm._s(
+                                  _vm._f("moment")(payment.date, "DD/MM/YYYY")
+                                )
                               )
                             ]),
                             _vm._v(" "),
@@ -45788,7 +45792,7 @@ var render = function() {
               staticClass: "form-control",
               attrs: {
                 type: "text",
-                placeholder: "Buscar por número de factura"
+                placeholder: "Buscar por número de Recibo"
               },
               domProps: { value: _vm.invoice_id },
               on: {
@@ -45888,7 +45892,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            _vm._s(_vm._f("moment")(value.sell_date, "LL"))
+                            _vm._s(
+                              _vm._f("moment")(value.sell_date, "DD/MM/YYYY")
+                            )
                           )
                         ]),
                         _vm._v(" "),

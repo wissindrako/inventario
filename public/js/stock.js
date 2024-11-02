@@ -39423,8 +39423,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -41042,8 +41040,6 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(value.vendor.name))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(value.chalan_no))]),
-                        _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(value.stock_quantity))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(value.current_quantity))]),
@@ -41056,7 +41052,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            _vm._s(_vm._f("moment")(value.created_at, "LL"))
+                            _vm._s(
+                              _vm._f("moment")(value.created_at, "DD/MM/YYYY")
+                            )
                           )
                         ]),
                         _vm._v(" "),
@@ -41154,8 +41152,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Producto")]),
         _vm._v(" "),
         _c("th", [_vm._v("Proveedor")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Comprobante")]),
         _vm._v(" "),
         _c("th", [_vm._v("Stock inicial")]),
         _vm._v(" "),

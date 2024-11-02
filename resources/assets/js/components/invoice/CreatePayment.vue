@@ -14,7 +14,7 @@
 
                     	<form @submit.prevent="Payment()">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="CreatePayment">Pago de factura N° : {{ payment.id }}</h4>
+                            <h4 class="modal-title" id="CreatePayment">Recibo N° : {{ payment.id }}</h4>
                         </div>
                         <div class="modal-body">
                       

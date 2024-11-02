@@ -8,7 +8,7 @@
 
 
 					<div class="modal-header">
-						<h4 class="modal-title" id="CreatePayment">Pagos de factura N° : {{ id }}  <br> Cliente : {{ invoice.customer.customer_name }} </h4>
+						<h4 class="modal-title" id="CreatePayment">Recibo N° : {{ id }}  <br> Cliente : {{ invoice.customer.customer_name }} </h4>
 					</div>
 					<div class="modal-body">
 
@@ -29,7 +29,7 @@
 
 								<tbody>
 									<tr v-for="payment in payments">
-										<td>{{ payment.date | moment('LL') }}</td>	
+										<td>{{ payment.date | moment('DD/MM/YYYY') }}</td>	
 										<td>{{ payment.amount }}</td>	
 										<td>{{ payment.paid_in }}</td>
 										<!-- <td>{{ payment.bank_information }}</td>	 -->

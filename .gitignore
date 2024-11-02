@@ -2,3 +2,4 @@
 /vendor
 .env
 app/storage/
+storage/framework/views/*.php

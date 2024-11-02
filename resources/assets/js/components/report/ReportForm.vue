@@ -5,12 +5,12 @@
 			<div class="input-group">
 				<div class="form-line">
 					<select class="form-control select2" name="type" required="" v-model="report_type" v-select="report_type">
-						<option :value="''">Chose Report Type *</option>
-						<option :value="'stock'">Stock Report</option>
-						<option :value="'sell'">Sell Report</option>
-						<option :value="'profit'">Profit Report</option>
-						<option :value="'due'">Due Report</option>
-						<option :value="'invoice'">Invoice Report</option>
+						<!-- <option :value="''">Tipo de Reporte :</option> -->
+						<option :value="'stock'">Reporte de Inventario</option>
+						<!-- <option :value="'sell'">Reporte de ventas</option> -->
+						<!-- <option :value="'profit'">Reporte de ganancias</option> -->
+						<!-- <option :value="'due'">Reporte de deudas</option> -->
+						<!-- <option :value="'invoice'">Reporte de Recibos</option> -->
 					</select>
 				</div>
 			</div>
@@ -19,8 +19,8 @@
 		<div class="col-md-4">
 			<div class="input-group">
 				<div class="form-line">
-					<vuejs-datepicker :required="true" :placeholder="'Date To *'" :name="'start_date'"
-						:input-class="'form-control'"></vuejs-datepicker>
+					<vuejs-datepicker :required="true" :placeholder="'Desde *'" :name="'start_date'"
+						:input-class="'form-control'" v-model="start_date" format="dd-MM-yyyy"></vuejs-datepicker>
 				</div>
 			</div>
 		</div>
@@ -28,8 +28,8 @@
 		<div class="col-md-4">
 			<div class="input-group">
 				<div class="form-line">
-					<vuejs-datepicker :required="true" :placeholder="'Date From *'" :name="'end_date'"
-						:input-class="'form-control'"></vuejs-datepicker>
+					<vuejs-datepicker :required="true" :placeholder="'Hasta *'" :name="'end_date'"
+						:input-class="'form-control'" v-model="end_date" format="dd-MM-yyyy"></vuejs-datepicker>
 				</div>
 			</div>
 		</div>
@@ -40,7 +40,7 @@
 				<div class="form-line">
 					<select class="form-control select2" name="category_id" v-model="category_id" v-select="category_id"
 						v-on:change="findProduct">
-						<option value="">Chose Category (optional)</option>
+						<option value="">Por categoria (opcional)</option>
 						<option v-for="value in category" :value="value.id">{{ value.name }}</option>
 					</select>
 				</div>
@@ -52,7 +52,7 @@
 				<div class="form-line">
 					<select class="form-control select2" name="product_id" v-model="product_id" v-select="product_id"
 						v-on:change="findStock">
-						<option value="">Chose Product (optional)</option>
+						<option value="">Por producto (opcional)</option>
 						<option v-for="pr in product" :value="pr.id">{{ pr.product_name }}</option>
 					</select>
 				</div>
@@ -60,7 +60,7 @@
 		</div>
 
 
-		<div class="col-md-4" v-if="!isEnable">
+		<!-- <div class="col-md-4" v-if="!isEnable">
 			<div class="input-group">
 				<div class="form-line">
 					<select class="form-control select2" name="stock_id" v-model="chalan_id" v-select="chalan_id">
@@ -69,13 +69,13 @@
 					</select>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="col-md-4" v-if="!isEnable">
 			<div class="input-group">
 				<div class="form-line">
 					<select class="form-control select2" name="vendor_id">
-						<option value="">Chose Vendor (optional)</option>
+						<option value="">Por proveedor (optional)</option>
 						<option v-for="vn in vendor" :value="vn.id">{{ vn.name }}</option>
 					</select>
 				</div>
@@ -83,29 +83,30 @@
 		</div>
 
 
+		<!--
 		<div class="col-md-4">
 			<div class="input-group">
 				<div class="form-line">
 					<select class="form-control select2" name="customer_id">
-						<option value="">Customer (optional)</option>
+						<option value="">Por cliente (optional)</option>
 						<option v-for="cs in customer" :value="cs.id">{{ cs.customer_name }}</option>
 					</select>
 				</div>
 			</div>
 		</div>
-
+	
 
 		<div class="col-md-4">
 			<div class="input-group">
 				<div class="form-line">
 					<select class="form-control select2" name="user_id">
-						<option value="">Chose Stock Entire / Seller (optional)</option>
+						<option value="">Inventario completo / por vendedor (optional)</option>
 						<option v-for="us in user" :value="us.id">{{ us.name }}</option>
 					</select>
 				</div>
 			</div>
 		</div>
-
+	-->
 
 	</div>
 </template>
@@ -129,12 +130,12 @@ export default {
 	data() {
 
 		return {
-
-			report_type: '',
+			report_type: 'stock',
 			category_id: '',
 			product_id: '',
 			chalan_id: '',
-
+			start_date: new Date(new Date().getFullYear(), 0, 1),
+			end_date: new Date().toISOString().slice(0,10),
 			product: [],
 			chalan: [],
 

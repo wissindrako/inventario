@@ -310,7 +310,7 @@ class StockController extends Controller
 
       if($check > 0){
 
-       return response()->json(['status'=>'error','message'=>'No es posible el producto ya tiene Factura(s).']);
+       return response()->json(['status'=>'error','message'=>'No es posible el producto ya tiene Recibos(s).']);
 
      }
 

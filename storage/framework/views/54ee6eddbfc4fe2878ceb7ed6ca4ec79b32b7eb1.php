@@ -48,7 +48,7 @@
         </div>
         <!-- /.col -->
         <div class="col-sm-4 invoice-col text-right">
-          <b style="font-weight: bold;color: green">Factura N° : <?php echo e($invoice->id); ?></b><br>
+          <b style="font-weight: bold;color: green">Recibo N° : <?php echo e($invoice->id); ?></b><br>
           <b>Fecha: <?php echo e(date("d F Y", strtotime($invoice->sell_date))); ?></b><br>
         </div>
         <!-- /.col -->
