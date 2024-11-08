@@ -6,8 +6,8 @@ services:
     volumes:
       - ./:/var/www/html
     ports:
-      - 9000:80
-  
+      - 8011:80
+
   mysql_db:
     image: mysql:5.7
     container_name: inventario-db
@@ -15,11 +15,11 @@ services:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
-    - 3306:3306
-  
+      - 3311:3306
+
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
-      - 9001:80
+      - 9011:80
     environment:
       - PMA_ARBITRARY=1
