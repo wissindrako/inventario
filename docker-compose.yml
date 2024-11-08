@@ -1,25 +1,54 @@
 version: "3.7"
 services:
-  laravel-docker:
-    container_name: laravel-docker
-    build: .
+  app:
+    build:
+      args:
+        user: william
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: inventario
+    container_name: inventario-app
+    restart: unless-stopped
     volumes:
       - ./:/var/www/html
     ports:
       - 8011:80
+    networks:
+      - inventario
 
-  mysql_db:
+  db:
     image: mysql:5.7
     container_name: inventario-db
+    restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - inventario
     ports:
       - 3311:3306
 
   phpmyadmin:
-    image: phpmyadmin:latest
-    ports:
-      - 9011:80
+    image: phpmyadmin/phpmyadmin
+    container_name: inventario_phpmyadmin
+    links:
+      - db
     environment:
-      - PMA_ARBITRARY=1
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      UPLOAD_LIMIT: 300M
+    restart: always
+    networks:
+      - inventario
+    ports:
+      - "9011:80"
+networks:
+  inventario:
+    driver: bridge

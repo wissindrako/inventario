@@ -136,7 +136,7 @@ CREATE TABLE `payments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: permissions
@@ -208,7 +208,7 @@ CREATE TABLE `sell_details` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: sells
@@ -229,7 +229,7 @@ CREATE TABLE `sells` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: stocks
@@ -254,7 +254,7 @@ CREATE TABLE `stocks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: users
@@ -1161,757 +1161,45 @@ VALUES
 # DATA DUMP FOR TABLE: payments
 # ------------------------------------------------------------
 
-INSERT INTO
-  `payments` (
-    `id`,
-    `sell_id`,
-    `customer_id`,
-    `user_id`,
-    `date`,
-    `paid_in`,
-    `bank_information`,
-    `amount`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    1,
-    1,
-    8,
-    1,
-    '2023-10-16',
-    'efectivo',
-    NULL,
-    2100,
-    '2023-10-16 23:11:16',
-    '2023-10-16 23:11:16'
-  );
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: permissions
 # ------------------------------------------------------------
-
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    124,
-    5,
-    1,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    125,
-    5,
-    2,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    126,
-    5,
-    3,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    127,
-    5,
-    4,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    128,
-    5,
-    5,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    129,
-    5,
-    6,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    130,
-    5,
-    9,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    131,
-    5,
-    8,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    132,
-    5,
-    7,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    133,
-    5,
-    10,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    134,
-    5,
-    11,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    135,
-    5,
-    12,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    136,
-    5,
-    15,
-    '2019-02-23 00:54:16',
-    '2019-02-23 00:54:16'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    137,
-    6,
-    1,
-    '2019-02-23 03:25:01',
-    '2019-02-23 03:25:01'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    138,
-    6,
-    3,
-    '2019-02-23 03:25:01',
-    '2019-02-23 03:25:01'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    139,
-    6,
-    6,
-    '2019-02-23 03:25:01',
-    '2019-02-23 03:25:01'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    140,
-    6,
-    15,
-    '2019-02-23 03:25:01',
-    '2019-02-23 03:25:01'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    706,
-    4,
-    11,
-    '2020-07-31 17:30:54',
-    '2020-07-31 17:30:54'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    707,
-    4,
-    2,
-    '2020-07-31 17:30:54',
-    '2020-07-31 17:30:54'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    708,
-    4,
-    4,
-    '2020-07-31 17:30:54',
-    '2020-07-31 17:30:54'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    709,
-    4,
-    15,
-    '2020-07-31 17:30:54',
-    '2020-07-31 17:30:54'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    710,
-    4,
-    6,
-    '2020-07-31 17:30:54',
-    '2020-07-31 17:30:54'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    721,
-    3,
-    1,
-    '2020-11-17 17:03:42',
-    '2020-11-17 17:03:42'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    722,
-    3,
-    9,
-    '2020-11-17 17:03:42',
-    '2020-11-17 17:03:42'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    723,
-    3,
-    8,
-    '2020-11-17 17:03:42',
-    '2020-11-17 17:03:42'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    724,
-    3,
-    7,
-    '2020-11-17 17:03:42',
-    '2020-11-17 17:03:42'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    725,
-    3,
-    2,
-    '2020-11-17 17:03:42',
-    '2020-11-17 17:03:42'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    726,
-    3,
-    10,
-    '2020-11-17 17:03:42',
-    '2020-11-17 17:03:42'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    727,
-    3,
-    11,
-    '2020-11-17 17:03:42',
-    '2020-11-17 17:03:42'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    728,
-    3,
-    3,
-    '2020-11-17 17:03:42',
-    '2020-11-17 17:03:42'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    729,
-    2,
-    1,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    730,
-    2,
-    9,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    731,
-    2,
-    8,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    732,
-    2,
-    7,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    733,
-    2,
-    2,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    734,
-    2,
-    10,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    735,
-    2,
-    11,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    736,
-    2,
-    3,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    737,
-    2,
-    12,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    738,
-    2,
-    13,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    739,
-    2,
-    4,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    740,
-    2,
-    5,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    741,
-    2,
-    14,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    742,
-    2,
-    15,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
-INSERT INTO
-  `permissions` (
-    `id`,
-    `role_id`,
-    `menu_id`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    743,
-    2,
-    6,
-    '2021-07-05 20:00:38',
-    '2021-07-05 20:00:38'
-  );
+INSERT INTO `permissions` (`id`, `role_id`, `menu_id`, `created_at`, `updated_at`) VALUES
+    (1, 2, 1, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (2, 2, 9, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (3, 2, 8, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (4, 2, 7, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (5, 2, 2, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (6, 2, 10, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (7, 2, 11, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (8, 2, 3, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (9, 2, 12, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (10, 2, 13, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (11, 2, 4, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (13, 2, 14, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (14, 2, 15, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (15, 2, 6, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (16, 3, 1, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (17, 3, 9, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (18, 3, 8, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (19, 3, 7, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (20, 3, 2, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (21, 3, 10, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (22, 3, 11, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (23, 3, 3, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (24, 3, 12, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (25, 3, 13, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (26, 3, 4, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (28, 3, 14, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (29, 3, 15, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (30, 3, 6, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+ 	  (31, 4, 1, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (32, 4, 3, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (33, 4, 10, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (34, 4, 11, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (35, 4, 15, '2024-11-05 20:00:38', '2024-11-05 20:00:38'),
+    (36, 2, 5, '2024-11-05 20:00:38', '2024-11-05 20:00:38');
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: products
@@ -2249,182 +1537,30 @@ VALUES
     '2019-02-13 01:34:11',
     '2023-04-17 04:36:08'
   );
-INSERT INTO
-  `roles` (`id`, `role_name`, `created_at`, `updated_at`)
-VALUES
-  (
-    5,
-    'Controlador',
-    '2019-02-13 05:53:15',
-    '2023-04-17 04:41:36'
-  );
+-- INSERT INTO
+--   `roles` (`id`, `role_name`, `created_at`, `updated_at`)
+-- VALUES
+--   (
+--     5,
+--     'Controlador',
+--     '2019-02-13 05:53:15',
+--     '2023-04-17 04:41:36'
+--   );
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: sell_details
 # ------------------------------------------------------------
 
-INSERT INTO
-  `sell_details` (
-    `id`,
-    `stock_id`,
-    `sell_id`,
-    `product_id`,
-    `category_id`,
-    `vendor_id`,
-    `user_id`,
-    `chalan_no`,
-    `selling_date`,
-    `customer_id`,
-    `sold_quantity`,
-    `buy_price`,
-    `sold_price`,
-    `total_buy_price`,
-    `total_sold_price`,
-    `discount`,
-    `discount_type`,
-    `discount_amount`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    1,
-    2,
-    1,
-    4,
-    2,
-    2,
-    1,
-    '2023-10-16',
-    '2023-10-16',
-    '8',
-    1,
-    2100,
-    2100,
-    2100,
-    2100,
-    0,
-    1,
-    0,
-    '2023-10-16 23:11:16',
-    '2023-10-16 23:11:16'
-  );
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: sells
 # ------------------------------------------------------------
 
-INSERT INTO
-  `sells` (
-    `id`,
-    `user_id`,
-    `customer_id`,
-    `branch_id`,
-    `total_amount`,
-    `paid_amount`,
-    `sell_date`,
-    `discount_amount`,
-    `payment_method`,
-    `payment_status`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    1,
-    1,
-    8,
-    1,
-    2100,
-    2100,
-    '2023-10-16',
-    0,
-    2,
-    1,
-    '2023-10-16 23:11:16',
-    '2023-10-16 23:11:16'
-  );
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: stocks
 # ------------------------------------------------------------
 
-INSERT INTO
-  `stocks` (
-    `id`,
-    `product_code`,
-    `product_id`,
-    `category_id`,
-    `vendor_id`,
-    `user_id`,
-    `chalan_no`,
-    `buying_price`,
-    `selling_price`,
-    `discount`,
-    `stock_quantity`,
-    `current_quantity`,
-    `note`,
-    `status`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    1,
-    '1697515675',
-    1,
-    2,
-    1,
-    1,
-    '2023-10-16',
-    2700,
-    2700,
-    0,
-    10,
-    10,
-    NULL,
-    1,
-    '2023-10-16 23:07:55',
-    '2023-10-16 23:07:55'
-  );
-INSERT INTO
-  `stocks` (
-    `id`,
-    `product_code`,
-    `product_id`,
-    `category_id`,
-    `vendor_id`,
-    `user_id`,
-    `chalan_no`,
-    `buying_price`,
-    `selling_price`,
-    `discount`,
-    `stock_quantity`,
-    `current_quantity`,
-    `note`,
-    `status`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES
-  (
-    2,
-    '1697515782',
-    4,
-    2,
-    2,
-    1,
-    '2023-10-16',
-    2100,
-    2100,
-    0,
-    5,
-    4,
-    NULL,
-    1,
-    '2023-10-16 23:09:42',
-    '2023-10-16 23:11:16'
-  );
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: users
@@ -2515,7 +1651,7 @@ VALUES
     'BHENEZ',
     '7733-3333',
     'ventas@bhenez.com.bo',
-    'Calle Sinaloa 1437, Col. Providencia, Guadalajara, Jalisco',
+    'Calle 4 No. 1437, Av. 6 de marzo',
     '2023-04-16 21:44:30',
     '2023-04-16 21:44:30'
   );
